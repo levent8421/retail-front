@@ -4,7 +4,7 @@
     <div class="commodities-wrapper" v-infinite-scroll="loadMore"
          :infinite-scroll-disabled="loading"
          :infinite-scroll-distance="10">
-      <commodity-card v-for="c in commodities" :key="c.id" :commodity="c"/>
+      <commodity-card v-for="c in commodities" :key="c.id" :commodity="c" @click="toDetail"/>
       <div class="loading" v-if="loading">
         <span class="iconfont icon-loading"></span>
         <span>加载中</span>
@@ -57,6 +57,12 @@ export default {
         if (res.data.data.isLastPage) {
           self.allLoaded = true
         }
+      })
+    },
+    toDetail (c) {
+      this.$router.push({
+        name: 'CommodityDetail',
+        params: c
       })
     }
   }
