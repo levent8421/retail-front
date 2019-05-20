@@ -1,0 +1,5 @@
+import '../assets/css/iconfont/iconfont.css'
+import '../assets/css/iconfont/iconfont.woff'
+import '../assets/css/iconfont/iconfont.woff2'
+import '../assets/css/iconfont/iconfont.eot'
+import '../assets/css/iconfont/iconfont.ttf'
