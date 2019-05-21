@@ -33,7 +33,7 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     background-color: #F5F5F9;
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
 
     .main-content {
       padding-top: 40px;

@@ -27,6 +27,7 @@ export default {
   created () {
     this.$store.dispatch('app/showTabbar')
     this.$store.dispatch('app/showHeader')
+    this.$store.dispatch('app/selectTab', 'local')
   },
   data () {
     return {}

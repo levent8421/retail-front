@@ -30,7 +30,7 @@ const app = {
     selectTab ({commit}, tab) {
       commit('setTab', tab)
     },
-    setTtile ({commit}, title) {
+    setTitle ({commit}, title) {
       commit('setTitle', title)
     },
     hideTabbar ({commit}) {
