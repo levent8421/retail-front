@@ -12,9 +12,18 @@ import AppTabBar from '@/components/AppTabBar'
 
 export default {
   name: 'App',
+  created () {
+    this.loadUserInfo()
+  },
   components: {
     AppHeader,
     AppTabBar
+  },
+  methods: {
+    loadUserInfo () {
+      const userId = this.$route.params.userId
+      this.$store.dispatch('user/login', userId)
+    }
   }
 }
 </script>
@@ -33,7 +42,6 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     background-color: #F5F5F9;
     width: 100%;
-    /*height: 100%;*/
 
     .main-content {
       padding-top: 40px;

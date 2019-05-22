@@ -32,7 +32,6 @@
 </template>
 
 <script>
-import userApi from '@/api/user'
 import commodityApi from '@/api/commodity'
 import {Toast} from 'mint-ui'
 
@@ -41,13 +40,15 @@ export default {
   data () {
     return {
       commodity: {},
-      user: {},
       count: 1
     }
   },
   computed: {
     totalFee () {
       return this.commodity.currentPrice * this.count
+    },
+    user () {
+      return this.$store.state.user.user
     }
   },
   created () {
@@ -57,9 +58,6 @@ export default {
   },
   methods: {
     loadData () {
-      userApi.detail(1).then(res => {
-        this.user = res.data.data
-      })
       commodityApi.detail(this.commodity.id).then(res => {
         this.commodity = res.data.data
       })

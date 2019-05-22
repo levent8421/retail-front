@@ -14,7 +14,6 @@
 <script>
 export default {
   created () {
-    console.log('初始化定位条')
   },
   data () {
     return {name: '常州'}
