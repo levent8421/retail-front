@@ -1,7 +1,7 @@
 <template>
   <div class="my">
     <div class="my-header">
-      <img :src="user.wxAvatar" alt="" class="wx-avatar">
+      <img :src="user.wxAvatar" alt="" class="wx-avatar" @click="scanQRCode">
       <div class="info">
         <h4>{{user.name}}</h4>
         <p>{{user.phone | filterPhone}}</p>
@@ -50,6 +50,7 @@
 <script>
 import OrderCard from '@/components/commons/OrderCard'
 import {Indicator, Toast} from 'mint-ui'
+import wx from '@/model/wx'
 
 export default {
   name: 'Index',
@@ -102,6 +103,11 @@ export default {
     toTeam () {
       this.$router.push({
         name: 'Team'
+      })
+    },
+    scanQRCode () {
+      wx.scanQRCode(res => {
+        console.log('Scan result', res)
       })
     }
   }

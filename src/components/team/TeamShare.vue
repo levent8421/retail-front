@@ -14,6 +14,7 @@ export default {
   created () {
     this.$store.dispatch('app/hideTabbar')
     this.$store.dispatch('app/setTitle', '组建团队')
+    console.log(document.cookie)
   }
 }
 </script>

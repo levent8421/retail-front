@@ -9,11 +9,13 @@
 <script>
 import AppHeader from '@/components/AppHeader'
 import AppTabBar from '@/components/AppTabBar'
+import wx from '@/model/wx'
 
 export default {
   name: 'App',
   created () {
     this.loadUserInfo()
+    this.configWx()
   },
   components: {
     AppHeader,
@@ -21,8 +23,10 @@ export default {
   },
   methods: {
     loadUserInfo () {
-      const userId = this.$route.params.userId
-      this.$store.dispatch('user/login', userId)
+      this.$store.dispatch('user/me')
+    },
+    configWx () {
+      wx.init()
     }
   }
 }

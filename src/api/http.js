@@ -25,5 +25,8 @@ export default {
     return axios.get(url, {
       params: param
     })
+  },
+  post (url, data) {
+    return axios.post(url, data)
   }
 }

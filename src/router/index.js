@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/Index'
-import CommodityDetail from '@/components/CommodityDetail/Index'
+import CommodityDetail from '@/components/commodityDetail/Index'
 import Buy from '@/components/buy/Buy'
 import Vault from '@/components/vault/Index'
 import Team from '@/components/Team/Index'
@@ -13,7 +13,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/home/:userId',
+      path: '/',
       name: 'Index',
       component: Index
     },
